@@ -13,4 +13,9 @@ export class RestServiceService {
   getAll() {
     return this.http.get(`${baseUrl}` + '/hotels');
   }
+
+  create(data) {
+    console.log(`${baseUrl}` + '/hotels');
+    return this.http.post(`${baseUrl}` + '/hotels', data);
+  }
 }
