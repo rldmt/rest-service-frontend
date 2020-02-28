@@ -18,4 +18,14 @@ export class RestServiceService {
     console.log(`${baseUrl}` + '/hotels');
     return this.http.post(`${baseUrl}` + '/hotels', data);
   }
+  
+  get(id) {
+    console.log(`${baseUrl}` + '/hotel/'+`${id}`);
+    return this.http.get(`${baseUrl}` + '/hotel/' + `${id}`);
+  }
+
+  delete(id: number) {
+    console.log(`${baseUrl}` + '/hotel/' + `${id}`);
+    return this.http.delete(`${baseUrl}` + '/hotel/'+`${id}`)
+  }
 }
