@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let hotel of hotels">
-      name: {{ hotel.hotel_name }} - stars: {{ hotel.stars }} - address of hotel: {{ hotel.address }}
+    <li *ngFor="let hotel of hotels; let i = index">
+      {{i}} - name: {{ hotel.hotel_name }} - stars: {{ hotel.stars }} - address of hotel: {{ hotel.address }} - id: {{hotel.id}}
     </li>
   </ul>
