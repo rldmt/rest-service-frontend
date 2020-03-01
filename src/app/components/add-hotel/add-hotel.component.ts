@@ -8,14 +8,16 @@ import { RestServiceService } from 'src/app/services/rest-service.service';
 export class AddHotelComponent implements OnInit {
   hotel = {
     hotel_name: '',
-    stars: null,
+    stars: 1,
     address: ''
   };
   submitted = false;
+  stars_hotel = [];
 
   constructor(private restService: RestServiceService) { }
 
   ngOnInit() {
+    this.stars_hotel = [1,2,3,4,5];
   }
 
   saveHotel() {

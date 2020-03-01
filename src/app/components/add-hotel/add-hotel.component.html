@@ -13,14 +13,12 @@
       </div>
   
       <div class="form-group">
-        <label for="stars">Stars</label>
-        <input
-          class="form-control"
-          id="stars"
-          required
-          [(ngModel)]="hotel.stars"
-          name="stars"
-        />
+        <label for="stars">Yje</label>
+        <select id="stars" class="form-control" name="stars" [(ngModel)]="hotel.stars">
+          <option *ngFor="let star of stars_hotel" [value]="star">
+            {{ star }}
+          </option>
+        </select>
       </div>
 
       <div class="form-group">
