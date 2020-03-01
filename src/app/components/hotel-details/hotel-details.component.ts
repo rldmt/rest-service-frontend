@@ -35,8 +35,8 @@ export class HotelDetailsComponent implements OnInit {
   deleteHotel() {
     this.restservice.delete(this.hotel.id)
       .subscribe(data => {
-        console.log(data);
-        this.msg = 'The hotel has been deleted';
+          this.hotel = data
+          this.router.navigate(['/hotels'])
       })
   }
 
