@@ -38,7 +38,7 @@ export class AddHotelComponent implements OnInit {
     this.submitted = true;
   }
 
-  newTutorial() {
+  newHotel() {
     this.submitted = false;
     this.hotel = {
       hotel_name: '',
