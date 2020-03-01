@@ -19,6 +19,10 @@ export class HotelListComponent implements OnInit {
     )
   }
 
+  viewHotel(id: number) {
+    this.router.navigate(['/hotels/' + `${id}`])
+  }
+
   deleteHotel(id: number) {
     this.restservice.delete(id)
       .subscribe(

@@ -1,6 +1,7 @@
 <ul>
     <li *ngFor="let hotel of hotels; let i = index">
       {{i}} - name: {{ hotel.hotel_name }} - stars: {{ hotel.stars }} - address of hotel: {{ hotel.address }} - id: {{hotel.id}}
+      <button (click)="viewHotel(hotel.id)">Details</button>
       <button (click)="deleteHotel(hotel.id)">Delete</button>
     </li>
   </ul>
