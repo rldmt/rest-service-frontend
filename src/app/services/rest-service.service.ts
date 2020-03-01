@@ -19,10 +19,15 @@ export class RestServiceService {
     return this.http.post(`${baseUrl}` + '/hotels', data);
   }
   
-  get(id) {
+  get(id: number) {
     console.log(`${baseUrl}` + '/hotel/'+`${id}`);
     return this.http.get(`${baseUrl}` + '/hotel/' + `${id}`);
   }
+
+  update(id: number, data: any) {
+    return this.http.put(`${baseUrl}/hotel/${id}`, data);
+  }
+
 
   delete(id: number) {
     console.log(`${baseUrl}` + '/hotel/' + `${id}`);

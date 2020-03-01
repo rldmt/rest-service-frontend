@@ -40,4 +40,16 @@ export class HotelDetailsComponent implements OnInit {
       })
   }
 
+  updateHotel() {
+    this.restservice.update(this.hotel.id, this.hotel)
+      .subscribe(
+        data => {
+          console.log(data)
+          this.msg = 'updated succesfully';
+          this.router.navigate(['/hotels'])
+        },
+        error => {
+          console.log(error);
+        })
+  }
 }
