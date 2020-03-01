@@ -11,32 +11,34 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class HotelDetailsComponent implements OnInit {
   hotel: any = null;
   msg = '';
+  stars = [];
 
-  constructor(private restservice: RestServiceService, 
-              private router: Router,
-              private route: ActivatedRoute) { }
+  constructor(private restservice: RestServiceService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.msg = '';
+    this.stars = ['1', '2', '3', '4', '5'];
     this.getHotel(this.route.snapshot.paramMap.get('id'))
   }
 
   getHotel(id) {
     this.restservice.get(id)
-      .subscribe(data =>{
+      .subscribe(data => {
         this.hotel = data;
         console.log(data);
       },
-      error => {
-        console.log(error);
-      })
+        error => {
+          console.log(error);
+        })
   }
 
   deleteHotel() {
     this.restservice.delete(this.hotel.id)
       .subscribe(data => {
-          this.hotel = data
-          this.router.navigate(['/hotels'])
+        this.hotel = data
+        this.router.navigate(['/hotels'])
       })
   }
 
